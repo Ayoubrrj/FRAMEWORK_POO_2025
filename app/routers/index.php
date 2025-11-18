@@ -6,6 +6,9 @@
 // CTRL: pagesController
 // ACTION: home
 
+// VERSION 1
+// $pagesController = new \App\Controllers\PagesController();
+// $pagesController->homeAction($conn);
 
-include_once '../app/controllers/pagesControllers.php';
-\App\Controllers\PagesController\homeAction($conn);
+// VERSION 2
+\App\Controllers\PagesController::homeAction($conn);
