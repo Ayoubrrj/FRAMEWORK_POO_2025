@@ -13,7 +13,7 @@ abstract class Repository
 
     protected static function init() 
     {
-                // App\Models\BooksRepository
+        // App\Models\BooksRepository
         // echo static::class;
         $root_name = basename(str_replace('\\', '/', static::class), "Repository");  // Books
         static::$_table = strtolower($root_name);                 // books
