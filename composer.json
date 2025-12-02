@@ -2,7 +2,9 @@
     "name": "ayoub/framework_poo_2025",
     "autoload": {
         "psr-4": {
-            "App\\Controllers\\": "app/controllers/"
+            "Core\\": "core/",
+            "App\\Controllers\\": "app/controllers/",
+            "App\\Models\\": "app/models/"
         }
     },
     "authors": [

@@ -1,16 +1,19 @@
 <?php
 
 namespace App\Controllers;
-use \PDO;
 
-abstract class PagesController {
+use \App\Models\BooksRepository, \App\Models\AuthorsRepository;
 
-    public static function homeAction(PDO $conn) {
-    include_once '../app/models/booksModel.php';
-    $books = \App\Models\BooksModel\findAll($conn, 3);
-    GLOBAL $content, $title;
-    ob_start();
-    include '../app/views/pages/home.php';
-    $content = ob_get_clean();
+abstract class PagesController
+{
+    public static function homeAction()
+    {
+        $books = BooksRepository::findAll(3);
+        $authors = AuthorsRepository::findAll(3);
+
+        global $content, $title;
+        ob_start();
+        include '../app/views/pages/home.php';
+        $content = ob_get_clean();
     }
 }
